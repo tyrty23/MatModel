@@ -1,4 +1,4 @@
-# Отчет по лабораторной работе №1 по Мат Моделированию
+# Отчет по лабораторной работе №1 по Математическому Моделированию
 
 ## 1-2. Содержательная постановка задачи
 
@@ -35,8 +35,109 @@
 
 ## 4. Математическая постановка задачи
 
+
 ## 5. Реализация
 
+### Програмная реализация метода 
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from IPython.display import HTML, display
+import ipywidgets as widgets
+
+  
+v0=r'$\nu = $'
+alpha1=r'$\alpha = $'
+h1=r'$h = $'
+ms=r'$\frac{м}{с}$'
+
+def trajectory_2d(v, alpha, theta, t, x0, y0):
+    alpha_rad = np.radians(alpha) 
+    theta_rad = np.radians(theta)  
+    x = x0 + v * np.cos(alpha_rad) * np.cos(theta_rad) * t
+    y = y0 + v * np.cos(alpha_rad) * np.sin(theta_rad) * t
+    z = h0 + v * np.sin(alpha_rad) * t - (g * t**2) / 2
+    return x, y, z
+
+
+def check_trajectory_2d(v, alpha, theta, x0, y0):
+    alpha_rad = np.radians(alpha)
+    t_flight = (v * np.sin(alpha_rad)+ np.sqrt((v * np.sin(alpha_rad))**2 + 2 * g * h0)) / g    
+    t_net = (d - x0) / (v * np.cos(alpha_rad) *np.cos(np.radians(theta)))/np.cos(np.radians(theta))
+    _, y_net, z_net = trajectory_2d(v, alpha, theta, t_net, x0, y0)
+    if z_net < H:
+        return False     
+    x_land, y_land, _ = trajectory_2d(v, alpha, theta, t_flight, x0, y0)
+    
+    if x_land < d:
+        return False 
+    elif x_land > d + L:
+        return False  
+    elif abs(y_land) > W / 2:
+        return False  
+    else:
+        return True 
+
+g = 9.81  
+d = 9.0   
+L = 9.0   
+W = 9.0 
+H = 2.43
+h0 =        # заданная высота броска
+alpha =     # заданный угол к горизонту
+v =         # заданная скорость
+court_width = 9.0  
+court_length = 9.0  
+grid_size = 400  
+
+x_positions = np.linspace(-court_length, 0, grid_size)
+y_positions = np.linspace(-court_width / 2, court_width / 2, grid_size)
+x_coords, y_coords = np.meshgrid(x_positions, y_positions)
+
+successful_x = []
+successful_y = []
+
+for i in range(grid_size):
+    for j in range(grid_size):
+        x0 = x_coords[i, j]
+        y0 = y_coords[i, j]
+        for theta in range(-90, 90, 1): 
+            if check_trajectory_2d(v, alpha, theta, x0, y0):
+                successful_x.append(x0)
+                successful_y.append(y0)
+                break
+
+fig, ax = plt.subplots(figsize=(10, 5))
+
+ax.add_patch(plt.Rectangle((-court_length, -court_width / 2), court_length,\
+     court_width, fill=False, color='black'))
+ax.add_patch(plt.Rectangle((0, -court_width / 2), court_length,\
+     court_width, fill=False, color='black'))
+
+ax.scatter(successful_x, successful_y, color='green', s=10, label='Попадание')
+ax.set_xlim(-court_length, court_length)
+ax.set_ylim(-court_width / 2, court_width / 2)
+ax.set_xlabel("Длина площадки (м)")
+ax.set_ylabel("Ширина площадки (м)")
+ax.set_title("Область на нашей половине, из которой можно попасть на вражескую площадку")
+
+ax.text(7,2,f"НУ:\n{v0}{v} {ms}\n{alpha1}{alpha}°\n{h1}{H} м")
+ax.legend()
+plt.grid()
+plt.show()
+ 
+```
+ 
 ## 6. Качественный аннализ задачи
 
+С математической точки зрения задача свелась к задаче Коши для системы дифференциальных уравнений 1-го порядяка с заданными начальными условиями. 
+
+Выполним контроль размерности задач:
+
+
 ## 7. Численное иследование модели
+
+При исследовании задачи было получено следующее решение
+
+![](.pic/02.png)
