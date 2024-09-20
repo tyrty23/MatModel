@@ -164,7 +164,15 @@ plt.show()
 
 Выполним контроль размерности задач:
 
+$m\frac{\partial V_x}{\partial t}=mg \rightarrow [кг]\frac{м}{с^2}=[кг \frac{м}{с^2}]$
+$V_x=\frac{\partial x}{\partial t} \rightarrow [\frac{м}{с}]=\frac{[м]}{[с]}=[\frac{м}{с}]$
 
+
+$m\frac{\partial V_y}{\partial t}=mg \rightarrow [кг]\frac{м}{с^2}=[кг \frac{м}{с^2}]$
+$V_y=\frac{\partial y}{\partial t} \rightarrow [\frac{м}{с}]=\frac{[м]}{[с]}=[\frac{м}{с}]$
+
+$m\frac{\partial V_z}{\partial t}=mg \rightarrow [кг]\frac{м}{с^2}=[кг \frac{м}{с^2}]$
+$V_z=\frac{\partial z}{\partial t} \rightarrow [\frac{м}{с}]=\frac{[м]}{[с]}=[\frac{м}{с}]$
 ## 7. Численное иследование модели
 
 При исследовании задачи было получено следующее решение
