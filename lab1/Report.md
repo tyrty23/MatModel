@@ -64,7 +64,7 @@ def trajectory_2d(v, alpha, theta, t, x0, y0):
 def check_trajectory_2d(v, alpha, theta, x0, y0):
     alpha_rad = np.radians(alpha)
     t_flight = (v * np.sin(alpha_rad)+ np.sqrt((v * np.sin(alpha_rad))**2 + 2 * g * h0)) / g    
-    t_net = (d - x0) / (v * np.cos(alpha_rad) *np.cos(np.radians(theta)))/np.cos(np.radians(theta))
+    t_net = (d - x0) / (v * np.cos(alpha_rad) *np.cos(np.radians(theta)))
     _, y_net, z_net = trajectory_2d(v, alpha, theta, t_net, x0, y0)
     if z_net < H:
         return False     
@@ -129,7 +129,7 @@ plt.show()
  
 ```
  
-## 6. Качественный аннализ задачи
+## 6. Качественный анализ задачи
 
 С математической точки зрения задача свелась к задаче Коши для системы дифференциальных уравнений 1-го порядяка с заданными начальными условиями. 
 
