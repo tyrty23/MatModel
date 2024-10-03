@@ -25,7 +25,7 @@
 
 ## 3. Концептуальная постанока задачи
 
-![](image.png)
+![](src/image.png)
 
 Рассмотрим решение поставленной задачи в рамках классической механики.
 Применим следующие гипотезы:
@@ -162,12 +162,12 @@ $$u = \frac {M}{m}L\sqrt{\frac {g}{l}}$$
 
 #### Контроль размерности уравнений:
 
-$$u=\sqrt{\frac{M}{m}}L\sqrt{\frac{g}{l}} \;\;\;\;\;⇒\;\;\;\; \left[\frac{м}{с}\right] = \sqrt{\left[\frac{кг}{кг}\right]} \left[м\right] \sqrt{\left[\frac{м/с^2}{м}\right]} \;\;\;\;\;⇒\;\;\;\; \left[\frac{м}{с}\right] = \left[\frac{м}{с}\right]$$
+$$u=\sqrt{\frac{M}{m}}L\sqrt{\frac{g}{l}} ⇒ \left[\frac{м}{с}\right] = \sqrt{\left[\frac{кг}{кг}\right]} \left[м\right] \sqrt{\left[\frac{м/с^2}{м}\right]} ⇒ \left[\frac{м}{с}\right] = \left[\frac{м}{с}\right]$$
 
-$$u=\frac{M}{m}L\sqrt{\frac{g}{l}} \;\;\;\;\;⇒\;\;\;\; \left[\frac{м}{с}\right] = \left[\frac{кг}{кг}\right] \left[м\right] \sqrt{\left[\frac{м/с^2}{м}\right]} \;\;\;\;\;⇒\;\;\;\; \left[\frac{м}{с}\right] = \left[\frac{м}{с}\right]$$
+$$u=\frac{M}{m}L\sqrt{\frac{g}{l}} ⇒ \left[\frac{м}{с}\right] = \left[\frac{кг}{кг}\right] \left[м\right] \sqrt{\left[\frac{м/с^2}{м}\right]} ⇒ \left[\frac{м}{с}\right] = \left[\frac{м}{с}\right]$$
 
 
 ## 7. Численное иследование модели
 При исследовании задачи было получено следующее решение
 
-![](image2.png)
+![](src/image2.png)
