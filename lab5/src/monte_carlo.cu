@@ -231,7 +231,7 @@ int main(){
         pi=0;
         n=pow(2,k+8);
         for (size_t i = 0; i < n2; i++)
-            pi+=buffon(n,0.78f,1.0f);
+            pi+=buffon(n,1.0f,1.0f);
         arr[k]=abs(PI-pi/n2);
         N_[k]=n;
     }
