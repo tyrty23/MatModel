@@ -175,11 +175,8 @@ m_p = 300000
 m_n = 34000
 m_t = 274000
 
-rocket_two_stages(V_g, m_p, m_n, m_t)
-```
+Для первого пункта:
 ![](.pic/png6.png)
-Для задачи трехступенчатой ракеты:
-```python
-rocket_three_stages(V_g, m_p, m_n, m_t)
-```
+
+Для второго пункта:
 ![](.pic/png_5.png)
