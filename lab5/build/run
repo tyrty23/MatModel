@@ -1,0 +1,4 @@
+make clean
+make 
+./monte_carlo
+/bin/python3 "/home/tyrty/Рабочий стол/repos/MatModel/lab5/build/graph.py"
